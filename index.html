@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Tarjetas de Información</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("tartan.png");
+            padding: 20px;
+        }
+        
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .title-container {
+            text-align: center;
+            margin-bottom: 20px; /* Espacio debajo del título */
+        }
+
+        .card {
+            border-radius: 10px;
+            filter: drop-shadow(0 5px 10px 0 #ffffff);
+            width: 350px;
+            height: 260px;
+            background-color: #ffffff;
+            padding: 20px;
+            position: relative;
+            z-index: 0;
+            overflow: hidden;
+            transition: 0.6s ease-in;        
+        }
+        
+        .card::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: -15px;
+            right: -15px;
+            background: #15a3ce;
+            height:280px;
+            width: 25px;
+            border-radius: 32px;
+            transform: scale(1);
+            transform-origin: 50% 50%;
+            transition: transform 0.25s ease-out;
+            }
+
+            .card:hover::before{
+                transition-delay:0.2s ;
+
+            transform: scale(40);
+            }
+
+        
+        .card:hover{
+            color: #ffffff;
+        }
+              
+        .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .card-description {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .card-reference, .card-example {
+            font-size: 12px;
+        }
+        
+        .card-reference {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="title-container">
+        <h1 clas="titulo">Página de Tarjetas de Información</h1>
+    </div>
+    
+    <div class="card-container">
+        <!-- Aquí se generan 30 tarjetas, puedes repetir este bloque para cada tarjeta -->
+        <div class="card">
+            <div class="card-title"> Aceptar el Riesgo</div>
+            <div class="card-description">Estrategia de respuesta a los riesgos en la que el equipo del proyecto decide reconocer el riesgo y no tomar ninguna medida a menos que el riesgo ocurra.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 11 (Gestión de los Riesgos del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: En un proyecto de software, si existe una baja probabilidad de que un componente de un sistema se retrase, el equipo puede optar por aceptar el riesgo y no planificar acciones de mitigación adicionales.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Acta de Constitución del Proyecto</div>
+            <div class="card-description">Documento emitido por el iniciador o patrocinador del proyecto que autoriza formalmente su existencia y confiere al director de proyecto la autoridad para aplicar recursos de la organización.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 4 (Gestión de la Integración del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: En un proyecto de construcción, el patrocinador firma el acta de constitución, autorizando la asignación de recursos financieros y humanos para iniciar el trabajo.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Activos de los Procesos de la Organización (OPA)</div>
+            <div class="card-description">Planes, procesos, políticas, procedimientos y bases de conocimiento específicos de la organización utilizados en el proyecto.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 2 (Entorno en el que Operan los Proyectos)</div>
+            <div class="card-example">Ejemplo de uso: Los OPA incluyen plantillas para la gestión de cambios que aseguran que todas las modificaciones en el proyecto se manejen de forma estándar.</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title"> Adaptación</div>
+            <div class="card-description">La adecuación deliberada del enfoque, la gobernanza y los procesos para que sean más adecuados para el entorno del proyecto.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 3 (Principios de la Dirección de Proyectos)</div>
+            <div class="card-example">Ejemplo de uso: Un proyecto que cambia de una metodología de desarrollo en cascada a ágil en respuesta a un entorno cambiante demuestra adaptación.</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title"> Ágil</div>
+            <div class="card-description">Término que describe una mentalidad definida por los valores y principios del Manifiesto Ágil, centrada en la entrega incremental y la flexibilidad.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 2 (Entorno en el que Operan los Proyectos)</div>
+            <div class="card-example">Ejemplo de uso: En el desarrollo de software, un equipo ágil realiza sprints de dos semanas para iterar rápidamente y responder a los cambios de los requisitos del cliente.</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Alcance del Proyecto</div>
+            <div class="card-description">Trabajo realizado para entregar un producto, servicio o resultado con funciones y características especificadas.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 5 (Gestión del Alcance del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: Definir el alcance del proyecto implica identificar las tareas específicas necesarias para construir una nueva aplicación móvil con funciones previamente acordadas.</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Amenaza</div>
+            <div class="card-description">Riesgo que tendría un efecto negativo sobre uno o más objetivos del proyecto.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 11 (Gestión de los Riesgos del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: Un cambio en la legislación que podría aumentar los costos de los materiales de construcción es una amenaza para un proyecto de construcción.</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Análisis de Alternativas</div>
+            <div class="card-description">Método utilizado para evaluar las opciones identificadas a fin de seleccionar las mejores alternativas para llevar a cabo el trabajo del proyecto.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 9 (Gestión de los Recursos del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso:  Comparar si es más rentable contratar trabajadores temporales o capacitar al personal existente para una tarea específica.</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Análisis Costo-Beneficio</div>
+            <div class="card-description">Método de análisis financiero utilizado para determinar los beneficios proporcionados por un proyecto en relación con sus costos.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 7 (Gestión de los Costos del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: Antes de aprobar un proyecto de modernización de una planta, se realiza un análisis costo-beneficio para evaluar si los ahorros futuros justifican la inversión inicial.</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Análisis de Causa Raíz</div>
+            <div class="card-description">Método analítico utilizado para determinar el motivo subyacente que causa una variación, defecto o riesgo.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 8 (Gestión de la Calidad del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: En un proyecto de desarrollo de software, se utiliza un análisis de causa raíz para identificar por qué un módulo sigue fallando durante las pruebas.</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Análisis de Escenarios “¿Qué pasa si…?”</div>
+            <div class="card-description">Proceso que consiste en evaluar escenarios para predecir su efecto sobre los objetivos del proyecto.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 11 (Gestión de los Riesgos del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: "¿Qué pasa si el proveedor se retrasa dos semanas?" Este tipo de análisis ayuda a planificar respuestas.</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Análisis de Hacer o Comprar</div>
+            <div class="card-description">Proceso de recopilar y organizar datos sobre los requisitos del producto y analizarlos frente a las alternativas disponibles, incluida la compra o fabricación interna del producto.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 12 (Gestión de las Adquisiciones del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: Decidir si se debe fabricar internamente una pieza específica de maquinaria o comprarla a un proveedor externo.</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Análisis de Interesados</div>
+            <div class="card-description">Método de recopilación y análisis sistemático de información para determinar los intereses de quienes deberían tenerse en cuenta durante el proyecto.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 13 (Gestión de los Interesados del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: Identificar que un grupo ambientalista es un interesado clave en un proyecto de construcción de una carretera y planificar cómo comunicarse con ellos.</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Análisis de Regresión</div>
+            <div class="card-description">Método analítico en el que se examinan variables de entrada en relación con sus correspondientes resultados de salida para desarrollar una relación estadística.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 11 (Gestión de los Riesgos del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: Utilizar análisis de regresión para determinar qué factores afectan más significativamente el tiempo de entrega de un proyecto.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Análisis de Reserva</div>
+            <div class="card-description">Método utilizado para evaluar la cantidad de riesgo del proyecto y la cantidad de reserva de cronograma y de presupuesto para determinar si la reserva es suficiente para el riesgo restante.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 7 (Gestión de los Costos del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: Determinar si las reservas presupuestarias son suficientes para cubrir posibles incrementos en el costo de materiales.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Análisis de Sensibilidad</div>
+            <div class="card-description">Método de análisis para determinar qué riesgos individuales del proyecto tienen el mayor impacto posible sobre los resultados del proyecto.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 11 (Gestión de los Riesgos del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: Evaluar cómo el retraso de un proveedor específico afectaría la línea de tiempo general del proyecto.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Análisis del Valor Ganado (EVA)</div>
+            <div class="card-description">Técnica para medir el desempeño de los costos y el cronograma del proyecto.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 7 (Gestión de los Costos del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: Comparar el valor ganado con el valor planificado para evaluar si el proyecto está dentro del presupuesto.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Calendario del Proyecto</div>
+            <div class="card-description">Calendario que identifica las fechas de trabajo del proyecto, los días festivos, y las fechas de inicio y finalización de las actividades.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 6 (Gestión del Cronograma del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: Un calendario que muestra todas las tareas del proyecto de construcción y las fechas de entrega correspondientes.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Caso de Negocio</div>
+            <div class="card-description">Documento que proporciona información sobre la necesidad del proyecto y el análisis de costo-beneficio para apoyar la decisión de iniciarlo.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 1 (Introducción)</div>
+            <div class="card-example">Ejemplo de uso: Un caso de negocio para una nueva aplicación de salud que muestra cómo mejorará los ingresos al ofrecer nuevas funciones a los clientes.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Ciclo de Vida del Proyecto</div>
+            <div class="card-description">Fases del proyecto que constituyen su ciclo de vida desde su inicio hasta su cierre.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 2 (Entorno en el que Operan los Proyectos)</div>
+            <div class="card-example">Ejemplo de uso: El ciclo de vida de un proyecto de construcción incluye fases como planificación, diseño, construcción y cierre.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Contrato por Tiempo y Materiales</div>
+            <div class="card-description">Tipo de contrato híbrido que tiene características tanto de los contratos de costo reembolsable como de los contratos de precio fijo.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 12 (Gestión de las Adquisiciones del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: Un contrato para contratar consultores a una tarifa por hora más los materiales utilizados.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Costo Hundido</div>
+            <div class="card-description">Costos que ya se han incurrido y no se pueden recuperar.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 7 (Gestión de los Costos del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: El costo de una investigación de mercado que ya se realizó no debe afectar decisiones futuras del proyecto, ya que es un costo hundido.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Criterios de Éxito del Proyecto</div>
+            <div class="card-description">Normas establecidas para determinar si el proyecto cumple con sus objetivos.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 4 (Gestión de la Integración del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: Criterios como "cumplir con el presupuesto" y "entregar a tiempo" definen el éxito del proyecto.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Descomposición</div>
+            <div class="card-description">Técnica utilizada para dividir y subdividir el alcance del proyecto y los entregables en partes más pequeñas y manejables.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 5 (Gestión del Alcance del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: Dividir un entregable grande, como "construir una casa", en tareas más pequeñas, como "instalar cimientos" o "colocar ventanas".</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Diagrama de Gantt</div>
+            <div class="card-description">Herramienta visual que representa el cronograma del proyecto mediante barras horizontales que indican las fechas de inicio y fin de las tareas.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 6 (Gestión del Cronograma del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: Un diagrama de Gantt puede mostrar las tareas del proyecto y su duración, como la construcción de un puente desde el diseño hasta la finalización.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Estimación de Costos</div>
+            <div class="card-description">Evaluación cuantitativa de los costos necesarios para completar las actividades del proyecto.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 7 (Gestión de los Costos del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: Calcular los costos de materiales, mano de obra y equipos para un proyecto de construcción.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Estructura de Desglose del Trabajo (EDT)</div>
+            <div class="card-description">Descomposición jerárquica del trabajo total a ser realizado por el equipo del proyecto para cumplir con los objetivos del proyecto.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 5 (Gestión del Alcance del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: Una EDT para un proyecto de desarrollo de software incluiría componentes como "diseño", "desarrollo", "pruebas" e "implementación".</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Gestión de los Riesgos del Proyecto</div>
+            <div class="card-description">Procesos de identificación, análisis, planificación, respuesta, monitoreo y control de los riesgos del proyecto.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 11 (Gestión de los Riesgos del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: Crear un plan de riesgos que identifique posibles retrasos en la entrega de materiales y establezca estrategias de mitigación.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Ruta Crítica</div>
+            <div class="card-description">Secuencia de actividades que determina la duración mínima del proyecto.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 6 (Gestión del Cronograma del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: En un proyecto de construcción, la ruta crítica puede incluir las tareas que deben completarse en orden para evitar retrasos.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Valor Planificado (PV)</div>
+            <div class="card-description">Presupuesto autorizado que ha sido asignado al trabajo planificado.</div>
+            <div class="card-reference">Referencia: PMBOK, Capítulo 7 (Gestión de los Costos del Proyecto)</div>
+            <div class="card-example">Ejemplo de uso: Si se asignan $10,000 al primer mes de un proyecto de software, este es el valor planificado para ese mes.</div>
+        </div>
+
+
+        <!-- Repite este patrón hasta tener 30 tarjetas -->
+    </div>
+
+</body>
+</html>
